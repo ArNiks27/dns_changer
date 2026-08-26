@@ -7,3 +7,7 @@ when launched, you can create a connection to any DNS with one click, without ma
 
 
 PLEASE MAKE DIR IN YOUR DESKTOP AND PLACE .EXE FILE IN YOUR DIR AND START
+
+
+
+this project for fun and my friends 
