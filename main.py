@@ -63,7 +63,7 @@ try:
     input("\npress Enter to display and flush DNS...")
 
 finally:
-    print("\nСбрасываем DNS на автоматическое получение (DHCP)...")
+    print("\nautomatic DHCP...")
     cmd_reset = f'netsh interface ip set dnsservers name="{INTERFACE_NETWORK_CONNECTION}" source=dhcp'
     subprocess.run(cmd_reset, shell=True, check=True)
     subprocess.run("ipconfig /flushdns", shell=True, check=True)
