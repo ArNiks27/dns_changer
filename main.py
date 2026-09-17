@@ -10,7 +10,6 @@ def get_base_path():
         return os.path.dirname(os.path.abspath(__file__))
 
 def get_wifi_interface_name():
-    """Автоматически находит системное имя беспроводного адаптера через PowerShell"""
     try:
         ps_get_name = 'Get-NetAdapter | Where-Object { $_.InterfacePhysicalMediaType -eq "Wireless80211" -or $_.MediaType -eq "Native 802.11" } | Select-Object -ExpandProperty Name'
         cmd = ["powershell", "-NoProfile", "-Command", ps_get_name]
