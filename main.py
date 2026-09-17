@@ -89,6 +89,7 @@ except subprocess.CalledProcessError as e:
 
 finally:
     print("\nautomatic DHCP...")
+<<<<<<< HEAD
     ps_reset = f'Set-DnsClientServerAddress -InterfaceAlias "{INTERFACE_NETWORK_CONNECTION}" -ResetServerAddresses'
     cmd_reset = ["powershell", "-NoProfile", "-Command", ps_reset]
     
@@ -98,3 +99,9 @@ finally:
         print("goodbye world")
     except subprocess.CalledProcessError:
         print("[WARNING] Could not reset to DHCP automatically.")
+=======
+    cmd_reset = f'netsh interface ip set dnsservers name="{INTERFACE_NETWORK_CONNECTION}" source=dhcp'
+    subprocess.run(cmd_reset, shell=True, check=True)
+    subprocess.run("ipconfig /flushdns", shell=True, check=True)
+    print("goodbye world")
+>>>>>>> ea6e16f11f7954d8e0e8cd69f879a9c9d070b721
